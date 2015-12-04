@@ -21,10 +21,10 @@ your solution as well as cross-browser compatibility for the latest versions of 
 
 ####Interaction Requirements:
 1. In the “Welcome back!” component:
-	a. Clicking yes will bring up a form to enter information about the book (Title, Author, etc)
-	b. Clicking no will close the component
+	* a. Clicking yes will bring up a form to enter information about the book (Title, Author, etc)
+	* b. Clicking no will close the component
 2. When the form from 1a is submitted, populate a new component for that book, and render it on the page.
-	a. Do some simple validation on the content to prevent duplicate entries.
+	* c. Do some simple validation on the content to prevent duplicate entries.
 
 #####Optional: 
 1. Add the ability to add reviews and create a star indicator based on those reviews (1 to 5 scale);
