@@ -3,10 +3,10 @@
 
 This test is designed to evaluate front end technical skills in HTML, CSS and Javascript in a holistic manner.  That is, the ability to create a solution from requirements in a manner that is clean and maintainable.  To that end, code structure and modularity are important, while things like pixel perfection with an associate mockup is less relevant.
 
-Please take your time (within reason) to find a solution that you are happy with.  Libraries and frameworks are allowed, as long as the code you provide give an indication of your own skill (ie, don't use Bootstrap without any of your own custom styles).  Comment your code where functionality or usage isn't obvious as well as to explain decisions that you've made in desgining your solution.
+Please take your time (within reason) to find a solution that you are happy with.  Libraries and frameworks are allowed, as long as the code you provide gives an indication of your own skill (ie, don't use Bootstrap without any of your own custom styles).  Comment your code where functionality or usage isn't obvious as well as to explain decisions that you've made in designing your solution.
 
 ###Feature Requirements:
-Build the UI as represented in the mockups includes in the “screenshots” folder.
+Build the UI as represented in the mockups included in the “screenshots” folder.
 Included are a ’mobile' view and a 'desktop' view, so please think about responsive design in
 your solution as well as cross-browser compatibility for the latest versions of major browsers (Chrome, Firefox and IE).
 
@@ -14,6 +14,7 @@ your solution as well as cross-browser compatibility for the latest versions of 
 - The 'desktop' view shows the 3 menu items inline, and the menu icon is not needed.
 - Don’t worry about persistence of data entered from the form above.  
 - Always consider site speed and accessibility in your solution.
+- Consider writing reusable code/component when building this application.
 
 ##### Assets
 - The icons for the mobile view have been attached for your convenience.
@@ -32,5 +33,5 @@ your solution as well as cross-browser compatibility for the latest versions of 
 
 ####Technical Requirements:
 1. Create JSON representations of the content.
-2. Use JavaScript to create the templates which will provide the markup and populate the content on the page.
+2. Use templates which will provide the markup and populate the content on the page.
 3. Identify and use a commonly used breakpoint for your responsive styles.
