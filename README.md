@@ -5,7 +5,7 @@ This test is designed to evaluate front end technical skills in HTML, CSS and Ja
 
 Please take your time (within reason) to find a solution that you are happy with.  Libraries and frameworks are allowed, as long as the code you provide gives an indication of your own skill (ie, don't use Bootstrap without any of your own custom styles).  Comment your code where functionality or usage isn't obvious as well as to explain decisions that you've made in designing your solution.
 
-To submit your solution, please create a pull request against the master branch for review.
+**To submit your solution, please create a pull request against the master branch for review.**
 
 ###Feature Requirements:
 Build the UI as represented in the mockups included in the “screenshots” folder.
