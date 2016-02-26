@@ -65,6 +65,14 @@ body{
   color: #212121;
 }
 
+input{
+  display: block;
+  border: none;
+  width: 94%;
+  border-radius: 3px;
+  margin-bottom: 2px;
+}
+
 .questions{
   border-top: 1px solid #DCDCDC;
   height: 62px;
@@ -82,7 +90,7 @@ body{
 
 .sponsor-image{
   height: 180px;
-  background-size: cover;
+  background-size: 100% 100%;
   color: white;
   font-family: 'Roboto Slab', serif;
   font-weight: 300;

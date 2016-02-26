@@ -1,25 +1,73 @@
 var React = require('react'),
-    books = require('./books.js');
+    books = require('./books.js'),
+    LinkedStateMixin = require('react-addons-linked-state-mixin');
 
 var Welcome = React.createClass({
 
+    mixins: [LinkedStateMixin],
+
+    getInitialState: function(){
+      return({opened: false, title: "", author: "", imageUrl: ""})
+    },
+
+    toggleForm: function(){
+      this.setState({opened: !this.state.opened})
+    },
+
+    addBook: function(e){
+      e.preventDefault();
+      books.addBook(this.state.title, this.state.author, this.state.imageUrl);
+      this.setState(this.getInitialState());
+      this.props.updateBooks();
+    },
+
     render: function(){
-      return(
-        <div className="box">
-          <div className="welcome-heading">
-            <div className="welcome-title">Welcome back!</div>
-            <p className="welcome-description">It's been a while.</p>
-            <p className="welcome-description">Read any new books lately?</p>
+      if (this.state.opened){
+        return (
+          <div className="box">
+            <div className="welcome-heading" >
+              <div className="welcome-title">Which Book Did You Read?</div>
+              <form onSubmit={this.addBook}>
+                <input type='text'
+                        className="welcome-description"
+                        valueLink={this.linkState('title')}
+                        placeholder='Title'/>
+                <input type="text"
+                        className="welcome-description"
+                        valueLink={this.linkState('author')}
+                        placeholder='Author'/>
+                <input type="text"
+                        className="welcome-description"
+                        valueLink={this.linkState('imageUrl')}
+                        placeholder='Image Url' />
+              </form>
+            </div>
+            <div className="questions" >
+              <p className="question button" style={{marginLeft: '38px'}}
+                  onClick={this.toggleForm}>CANCEL</p>
+              <p className="question button" style={{color: '#FFAC31', marginLeft: '38px'}}
+                  onClick={this.addBook}>SAVE</p>
+            </div>
           </div>
-          <div className="questions" >
-            <p className="question button" style={{marginLeft: '38px'}}>NO</p>
-            <p className="question button" style={{color: '#FFAC31', marginLeft: '38px'}}>YES</p>
+        )
+      } else {
+        return(
+          <div className="box">
+            <div className="welcome-heading">
+              <div className="welcome-title">Welcome back!</div>
+              <p className="welcome-description">It's been a while.</p>
+              <p className="welcome-description">Read any new books lately?</p>
+            </div>
+            <div className="questions" >
+              <p className="question button" style={{marginLeft: '38px'}}
+                  onClick={this.props.closeWelcome}>NO</p>
+              <p className="question button" style={{color: '#FFAC31', marginLeft: '38px'}}
+                  onClick={this.toggleForm}>YES</p>
+            </div>
           </div>
-        </div>
-      )
+        )
+      }
     }
-
-
 });
 
 module.exports = Welcome;
