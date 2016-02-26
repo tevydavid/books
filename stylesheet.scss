@@ -1,0 +1,81 @@
+.button {
+  cursor: pointer;
+}
+
+body{
+  background: #E3E3E3;
+  font-family: 'Roboto', sans-serif;
+}
+
+.col-sm-6{
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.box{
+  position: relative;
+  background: #FAFAFA;
+  border-radius: 3px;
+  margin: 8px;
+  box-shadow: 1px 1px 2px 1px #ACACAC;
+}
+
+.book-info{
+  display: inline-block;
+  position: absolute;
+  height: 100%;
+  left: 96px;
+  right: 0;
+}
+
+.book-title{
+  font-size: x-large;
+  padding: 14px 0 0 18px;
+}
+
+.book-author{
+  font-size: medium;
+  font-weight: 400;
+  color: rgba(117,117,117,.8);
+  padding: 2px 0 24px 18px;
+}
+
+.book-image{
+  display: inline-block;
+  height: 152px;
+  width: 96px;
+  border-radius: 3px 0 0 3px;
+}
+
+.welcome-heading{
+  height: 174px;
+  padding-left: 22px;
+}
+
+.welcome-title{
+  color: #EB1561;
+  font-size: x-large;
+  font-weight: 400;
+  padding: 22px 0 10px;
+}
+
+.welcome-description{
+  font-size: larger;
+  margin: 0;
+  color: #212121;
+}
+
+.questions{
+  border-top: 1px solid #DCDCDC;
+  height: 62px;
+  line-height: 62px;
+  bottom: 0;
+}
+
+.question{
+  display: inline-block;
+  margin-left: 30px;
+  font-size: medium;
+  font-weight: 500;
+  color: #212121;
+}

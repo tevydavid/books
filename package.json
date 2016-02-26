@@ -1,0 +1,27 @@
+{
+  "name": "tevydavid",
+  "version": "1.0.0",
+  "description": "This test is designed to evaluate front end technical skills in HTML, CSS and Javascript in a holistic manner.  That is, the ability to create a solution from requirements in a manner that is clean and maintainable.  To that end, code structure and modularity are important, while things like pixel perfection with an associate mockup is less relevant.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tevydavid/tevydavid.git"
+  },
+  "author": "tevydavid",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tevydavid/tevydavid/issues"
+  },
+  "homepage": "https://github.com/tevydavid/tevydavid#readme",
+  "dependencies": {
+    "babel-core": "^6.5.2",
+    "babel-loader": "^6.2.3",
+    "babel-preset-react": "^6.5.0",
+    "react": "^0.14.7",
+    "react-dom": "^0.14.7",
+    "webpack": "^1.12.14"
+  }
+}
