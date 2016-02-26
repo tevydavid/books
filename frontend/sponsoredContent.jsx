@@ -5,15 +5,14 @@ var SponsoredContent = React.createClass({
   render: function(){
     return (
       <div className = "box">
-        <img className="book-image" src="http://static1.squarespace.com/static/532abed3e4b025f227941d11/t/532ce5e3e4b0f59c2979d8c2/1395451365611"/>
-        <div className= "book-info">
-          <div className= "book-title"></div>
-          <div className= "book-author"></div>
+        <div className="sponsor-image" style={{'backgroundImage': 'url(http://in1.ccio.co/fI/iJ/v6/163044448979129468ACmFofsBc.jpg)'}}>
+          Top 10 Australian beaches</div>
+          <p className= "sponsor-number">Number 10</p>
+          <p className= "sponsor-description">Whitehaven Beach<br></br>Whitsunday Island, Whitsunday Islands</p>
           <div className= "questions">
             <p className="question button">SHARE</p>
             <p className="question button" style={{color: '#FFAC31'}}>EXPLORE</p>
           </div>
-        </div>
       </div>
     );
   }

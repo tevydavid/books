@@ -12,8 +12,8 @@ var Welcome = React.createClass({
             <p className="welcome-description">Read any new books lately?</p>
           </div>
           <div className="questions" >
-            <p className="question button">NO</p>
-            <p className="question button" style={{color: '#FFAC31'}}>YES</p>
+            <p className="question button" style={{marginLeft: '38px'}}>NO</p>
+            <p className="question button" style={{color: '#FFAC31', marginLeft: '38px'}}>YES</p>
           </div>
         </div>
       )

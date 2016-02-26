@@ -74,8 +74,35 @@ body{
 
 .question{
   display: inline-block;
-  margin-left: 30px;
+  margin-left: 18px;
   font-size: medium;
   font-weight: 500;
+  color: #212121;
+}
+
+.sponsor-image{
+  height: 180px;
+  background-size: cover;
+  color: white;
+  font-family: 'Roboto Slab', serif;
+  font-weight: 300;
+  letter-spacing: 1px;
+  line-height: 292px;
+  font-size: x-large;
+  padding-left: 18px;
+  border-radius: 3px 3px 0 0;
+}
+
+.sponsor-number {
+  padding: 12px 0 4px 16px;
+  margin: 0;
+  font-size: medium;
+  color: rgba(117,117,117,.8);
+}
+
+.sponsor-description{
+  padding: 0 0 12px 16px;
+  margin: 0;
+  font-size: medium;
   color: #212121;
 }
