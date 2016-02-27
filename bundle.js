@@ -19742,17 +19742,42 @@
 	var _books = [{ title: 'Marley And Me', author: 'John Grogan', imageUrl: 'http://www.johngroganbooks.com/images/marleychild_med.jpg' }, { title: 'Mindset', author: 'Carol Dweck', imageUrl: 'http://ecx.images-amazon.com/images/I/517chSlPcLL._SX323_BO1,204,203,200_.jpg' }];
 	
 	var books = {
+	
 	  all: function () {
 	    return _books;
 	  },
 	
+	  checkForDuplicate: function (title, author) {
+	    var dupe = false;
+	
+	    _books.forEach(function (book) {
+	      if (book['title'] === title && book['author'] === author) {
+	        dupe = true;
+	      }
+	    });
+	
+	    return dupe;
+	  },
+	
 	  addBook: function (title, author, imageUrl) {
+	
+	    if (this.checkForDuplicate(title, author)) {
+	      return false;
+	    }
+	
 	    var book = {
 	      title: title,
 	      author: author,
-	      imageUrl: imageUrl
+	      imageUrl: 'http://jcfamilies.com/wp-content/themes/jcfamily/images/noPhotoProvided.gif'
 	    };
+	
+	    if (imageUrl) {
+	      book['imageUrl'] = imageUrl;
+	    }
+	
 	    _books.push(book);
+	
+	    return true;
 	  }
 	};
 	
@@ -19824,7 +19849,7 @@
 	  mixins: [LinkedStateMixin],
 	
 	  getInitialState: function () {
-	    return { opened: false, title: "", author: "", imageUrl: "" };
+	    return { opened: false, title: "", author: "", imageUrl: "", message: "" };
 	  },
 	
 	  toggleForm: function () {
@@ -19833,12 +19858,23 @@
 	
 	  addBook: function (e) {
 	    e.preventDefault();
-	    books.addBook(this.state.title, this.state.author, this.state.imageUrl);
-	    this.setState(this.getInitialState());
-	    this.props.updateBooks();
+	    if (books.addBook(this.state.title, this.state.author, this.state.imageUrl)) {
+	      this.setState(this.getInitialState());
+	      this.props.updateBooks();
+	    } else {
+	      this.setState({ message: "You've already added this book." });
+	    };
 	  },
 	
 	  render: function () {
+	    if (this.state.message) {
+	      var validation = React.createElement(
+	        'div',
+	        { className: 'welcome-validation' },
+	        'You\'ve already added this book!'
+	      );
+	    }
+	
 	    if (this.state.opened) {
 	      return React.createElement(
 	        'div',
@@ -19866,7 +19902,8 @@
 	              className: 'welcome-description',
 	              valueLink: this.linkState('imageUrl'),
 	              placeholder: 'Image Url' })
-	          )
+	          ),
+	          validation
 	        ),
 	        React.createElement(
 	          'div',
@@ -20182,7 +20219,7 @@
 	
 	    bookList.push(React.createElement(
 	      'li',
-	      { key: '3', className: 'button' },
+	      { key: 'sponsor', className: 'button' },
 	      'Top 10 Australian Beaches'
 	    ));
 	

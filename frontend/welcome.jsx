@@ -7,7 +7,7 @@ var Welcome = React.createClass({
     mixins: [LinkedStateMixin],
 
     getInitialState: function(){
-      return({opened: false, title: "", author: "", imageUrl: ""})
+      return({opened: false, title: "", author: "", imageUrl: "", message:""})
     },
 
     toggleForm: function(){
@@ -16,12 +16,19 @@ var Welcome = React.createClass({
 
     addBook: function(e){
       e.preventDefault();
-      books.addBook(this.state.title, this.state.author, this.state.imageUrl);
-      this.setState(this.getInitialState());
-      this.props.updateBooks();
+      if (books.addBook(this.state.title, this.state.author, this.state.imageUrl)) {
+        this.setState(this.getInitialState());
+        this.props.updateBooks();
+      } else {
+        this.setState({message: "You've already added this book."})
+      };
     },
 
     render: function(){
+      if ( this.state.message ) {
+        var validation = <div className='welcome-validation'>You've already added this book!</div>
+      }
+
       if (this.state.opened){
         return (
           <div className="box">
@@ -41,6 +48,7 @@ var Welcome = React.createClass({
                         valueLink={this.linkState('imageUrl')}
                         placeholder='Image Url' />
               </form>
+              {validation}
             </div>
             <div className="questions" >
               <p className="question button" style={{marginLeft: '38px'}}

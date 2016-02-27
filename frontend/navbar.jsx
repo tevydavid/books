@@ -9,7 +9,7 @@ var Navbar = React.createClass({
        );
     });
 
-    bookList.push(<li key='3' className="button">Top 10 Australian Beaches</li>);
+    bookList.push(<li key='sponsor' className="button">Top 10 Australian Beaches</li>);
 
     return (
       <div>

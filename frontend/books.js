@@ -5,17 +5,43 @@ var _books = [
 ];
 
 var books = {
+
   all: function(){
     return _books;
   },
 
+  checkForDuplicate: function(title, author){
+    var dupe = false;
+
+    _books.forEach(function(book){
+      if ( book['title'] === title && book['author'] === author ) {
+        dupe = true;
+      }
+    });
+
+    return dupe;
+  },
+
   addBook: function(title, author, imageUrl){
+
+    if (this.checkForDuplicate(title,author)) {
+      return false;
+    }
+
     var book = {
       title: title,
       author: author,
-      imageUrl: imageUrl
+      imageUrl: 'http://jcfamilies.com/wp-content/themes/jcfamily/images/noPhotoProvided.gif'
     };
+
+    if (imageUrl) {
+      book['imageUrl'] = imageUrl;
+    }
+
+
     _books.push(book);
+
+    return true;
   }
 };
 

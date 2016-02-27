@@ -53,7 +53,7 @@ body{
 }
 
 .welcome-heading{
-  height: 174px;
+  min-height: 174px;
   padding-left: 22px;
 }
 
@@ -68,6 +68,12 @@ body{
   font-size: 19px;
   margin: 0;
   color: #212121;
+}
+
+.welcome-validation{
+  padding: 10px 0;
+  font-size: 19px;
+  color: #EB1561;
 }
 
 input{
