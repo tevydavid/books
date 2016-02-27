@@ -45,9 +45,10 @@
 /***/ function(module, exports, __webpack_require__) {
 
 	var React = __webpack_require__(1),
-	    ReactDOM = __webpack_require__(158);
-	BooksIndex = __webpack_require__(159);
-	SponsoredContent = __webpack_require__(163);
+	    ReactDOM = __webpack_require__(158),
+	    BooksIndex = __webpack_require__(159),
+	    Navbar = __webpack_require__(167),
+	    SponsoredContent = __webpack_require__(168);
 	
 	var MainComponent = React.createClass({
 	  displayName: 'MainComponent',
@@ -55,19 +56,24 @@
 	  render: function () {
 	    return React.createElement(
 	      'div',
-	      { className: 'container-fluid' },
+	      null,
+	      React.createElement(Navbar, null),
 	      React.createElement(
 	        'div',
-	        { className: 'row' },
+	        { className: 'container-fluid' },
 	        React.createElement(
 	          'div',
-	          { className: 'col-sm-6' },
-	          React.createElement(BooksIndex, null)
-	        ),
-	        React.createElement(
-	          'div',
-	          { className: 'col-sm-6' },
-	          React.createElement(SponsoredContent, null)
+	          { className: 'row' },
+	          React.createElement(
+	            'div',
+	            { className: 'col-sm-6' },
+	            React.createElement(BooksIndex, null)
+	          ),
+	          React.createElement(
+	            'div',
+	            { className: 'col-sm-6' },
+	            React.createElement(SponsoredContent, null)
+	          )
 	        )
 	      )
 	    );
@@ -19801,7 +19807,7 @@
 
 	var React = __webpack_require__(1),
 	    books = __webpack_require__(160),
-	    LinkedStateMixin = __webpack_require__(164);
+	    LinkedStateMixin = __webpack_require__(163);
 	
 	var Welcome = React.createClass({
 	  displayName: 'Welcome',
@@ -19921,62 +19927,10 @@
 /* 163 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var React = __webpack_require__(1);
-	
-	var SponsoredContent = React.createClass({
-	  displayName: "SponsoredContent",
-	
-	
-	  render: function () {
-	    return React.createElement(
-	      "div",
-	      { className: "box" },
-	      React.createElement(
-	        "div",
-	        { className: "sponsor-image", style: { 'backgroundImage': 'url(http://in1.ccio.co/fI/iJ/v6/163044448979129468ACmFofsBc.jpg)' } },
-	        "Top 10 Australian beaches"
-	      ),
-	      React.createElement(
-	        "p",
-	        { className: "sponsor-number" },
-	        "Number 10"
-	      ),
-	      React.createElement(
-	        "p",
-	        { className: "sponsor-description" },
-	        "Whitehaven Beach",
-	        React.createElement("br", null),
-	        "Whitsunday Island, Whitsunday Islands"
-	      ),
-	      React.createElement(
-	        "div",
-	        { className: "questions" },
-	        React.createElement(
-	          "p",
-	          { className: "question button" },
-	          "SHARE"
-	        ),
-	        React.createElement(
-	          "p",
-	          { className: "question button", style: { color: '#FFAC31' } },
-	          "EXPLORE"
-	        )
-	      )
-	    );
-	  }
-	
-	});
-	
-	module.exports = SponsoredContent;
+	module.exports = __webpack_require__(164);
 
 /***/ },
 /* 164 */
-/***/ function(module, exports, __webpack_require__) {
-
-	module.exports = __webpack_require__(165);
-
-/***/ },
-/* 165 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -19993,8 +19947,8 @@
 	
 	'use strict';
 	
-	var ReactLink = __webpack_require__(166);
-	var ReactStateSetters = __webpack_require__(167);
+	var ReactLink = __webpack_require__(165);
+	var ReactStateSetters = __webpack_require__(166);
 	
 	/**
 	 * A simple mixin around ReactLink.forState().
@@ -20017,7 +19971,7 @@
 	module.exports = LinkedStateMixin;
 
 /***/ },
-/* 166 */
+/* 165 */
 /***/ function(module, exports, __webpack_require__) {
 
 	/**
@@ -20091,7 +20045,7 @@
 	module.exports = ReactLink;
 
 /***/ },
-/* 167 */
+/* 166 */
 /***/ function(module, exports) {
 
 	/**
@@ -20198,6 +20152,129 @@
 	};
 	
 	module.exports = ReactStateSetters;
+
+/***/ },
+/* 167 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var React = __webpack_require__(1),
+	    books = __webpack_require__(160);
+	
+	var Navbar = React.createClass({
+	  displayName: 'Navbar',
+	
+	
+	  getInitialState: function () {
+	    return { current_books: books.all() };
+	  },
+	
+	  render: function () {
+	    var bookList = this.state.current_books.map(function (book, idx) {
+	      return React.createElement(
+	        'li',
+	        { key: idx, className: 'button' },
+	        book.title
+	      );
+	    });
+	
+	    bookList.push(React.createElement(
+	      'li',
+	      { className: 'button' },
+	      'Top 10 Australian Beaches'
+	    ));
+	
+	    return React.createElement(
+	      'div',
+	      null,
+	      React.createElement(
+	        'div',
+	        { className: 'navbar-title' },
+	        React.createElement(
+	          'button',
+	          { type: 'button', className: 'navbar-toggle collapsed', 'data-toggle': 'collapse', 'data-target': '#book-list', 'aria-expanded': 'false' },
+	          React.createElement(
+	            'svg',
+	            { xmlns: 'http://www.w3.org/2000/svg', width: '24', height: '24', viewBox: '0 0 24 24' },
+	            React.createElement('path', { d: 'M0 0h24v24h-24z', fill: 'none' }),
+	            React.createElement('path', { d: 'M3 18h18v-2h-18v2zm0-5h18v-2h-18v2zm0-7v2h18v-2h-18z' })
+	          )
+	        ),
+	        React.createElement(
+	          'p',
+	          null,
+	          'My Books'
+	        )
+	      ),
+	      React.createElement(
+	        'div',
+	        { className: 'container-fluid nav-lower' },
+	        React.createElement(
+	          'div',
+	          { className: 'collapse navbar-collapse', id: 'book-list' },
+	          React.createElement(
+	            'ul',
+	            { className: 'nav navbar-nav' },
+	            bookList
+	          )
+	        )
+	      )
+	    );
+	  }
+	});
+	
+	module.exports = Navbar;
+
+/***/ },
+/* 168 */
+/***/ function(module, exports, __webpack_require__) {
+
+	var React = __webpack_require__(1);
+	
+	var SponsoredContent = React.createClass({
+	  displayName: "SponsoredContent",
+	
+	
+	  render: function () {
+	    return React.createElement(
+	      "div",
+	      { className: "box" },
+	      React.createElement(
+	        "div",
+	        { className: "sponsor-image", style: { 'backgroundImage': 'url(http://in1.ccio.co/fI/iJ/v6/163044448979129468ACmFofsBc.jpg)' } },
+	        "Top 10 Australian beaches"
+	      ),
+	      React.createElement(
+	        "p",
+	        { className: "sponsor-number" },
+	        "Number 10"
+	      ),
+	      React.createElement(
+	        "p",
+	        { className: "sponsor-description" },
+	        "Whitehaven Beach",
+	        React.createElement("br", null),
+	        "Whitsunday Island, Whitsunday Islands"
+	      ),
+	      React.createElement(
+	        "div",
+	        { className: "questions" },
+	        React.createElement(
+	          "p",
+	          { className: "question button" },
+	          "SHARE"
+	        ),
+	        React.createElement(
+	          "p",
+	          { className: "question button", style: { color: '#FFAC31' } },
+	          "EXPLORE"
+	        )
+	      )
+	    );
+	  }
+	
+	});
+	
+	module.exports = SponsoredContent;
 
 /***/ }
 /******/ ]);
