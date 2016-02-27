@@ -1,14 +1,9 @@
-var React = require('react'),
-    books = require('./books');
+var React = require('react');
 
 var Navbar = React.createClass({
 
-  getInitialState:function(){
-    return({current_books: books.all()})
-  },
-
   render: function(){
-    var bookList = this.state.current_books.map(function(book, idx){
+    var bookList = this.props.current_books.map(function(book, idx){
       return (
          <li key={idx} className="button">{book.title}</li>
        );

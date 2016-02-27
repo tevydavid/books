@@ -48,16 +48,28 @@
 	    ReactDOM = __webpack_require__(158),
 	    BooksIndex = __webpack_require__(159),
 	    Navbar = __webpack_require__(167),
+	    books = __webpack_require__(160),
 	    SponsoredContent = __webpack_require__(168);
 	
 	var MainComponent = React.createClass({
 	  displayName: 'MainComponent',
 	
+	
+	  getInitialState: function () {
+	    return {
+	      current_books: books.all()
+	    };
+	  },
+	
+	  updateBooks: function () {
+	    this.setState({ current_books: books.all() });
+	  },
+	
 	  render: function () {
 	    return React.createElement(
 	      'div',
 	      null,
-	      React.createElement(Navbar, null),
+	      React.createElement(Navbar, { current_books: this.state.current_books }),
 	      React.createElement(
 	        'div',
 	        { className: 'container' },
@@ -67,7 +79,7 @@
 	          React.createElement(
 	            'div',
 	            { className: 'col-sm-6 col-lg-5' },
-	            React.createElement(BooksIndex, null)
+	            React.createElement(BooksIndex, { updateBooks: this.updateBooks, current_books: this.state.current_books })
 	          ),
 	          React.createElement(
 	            'div',
@@ -19699,25 +19711,21 @@
 	
 	
 	  getInitialState: function () {
-	    return { current_books: books.all(), welcomeOpen: true };
+	    return { welcomeOpen: true };
 	  },
 	
 	  closeWelcome: function () {
 	    this.setState({ welcomeOpen: false });
 	  },
 	
-	  updateBooks: function () {
-	    this.setState({ current_books: books.all() });
-	  },
-	
 	  render: function () {
-	    var bookList = this.state.current_books.map(function (book, idx) {
+	    var bookList = this.props.current_books.map(function (book, idx) {
 	      return React.createElement(BooksIndexItem, { key: idx, book: book });
 	    });
 	    return React.createElement(
 	      'div',
 	      null,
-	      this.state.welcomeOpen ? React.createElement(Welcome, { updateBooks: this.updateBooks, closeWelcome: this.closeWelcome }) : null,
+	      this.state.welcomeOpen ? React.createElement(Welcome, { updateBooks: this.props.updateBooks, closeWelcome: this.closeWelcome }) : null,
 	      bookList
 	    );
 	  }
@@ -20157,19 +20165,14 @@
 /* 167 */
 /***/ function(module, exports, __webpack_require__) {
 
-	var React = __webpack_require__(1),
-	    books = __webpack_require__(160);
+	var React = __webpack_require__(1);
 	
 	var Navbar = React.createClass({
 	  displayName: 'Navbar',
 	
 	
-	  getInitialState: function () {
-	    return { current_books: books.all() };
-	  },
-	
 	  render: function () {
-	    var bookList = this.state.current_books.map(function (book, idx) {
+	    var bookList = this.props.current_books.map(function (book, idx) {
 	      return React.createElement(
 	        'li',
 	        { key: idx, className: 'button' },
