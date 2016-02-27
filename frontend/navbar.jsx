@@ -3,6 +3,7 @@ var React = require('react');
 var Navbar = React.createClass({
 
   render: function(){
+    
     var bookList = this.props.current_books.map(function(book, idx){
       return (
          <li key={idx} className="button">{book.title}</li>

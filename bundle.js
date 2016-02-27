@@ -19750,6 +19750,8 @@
 	  checkForDuplicate: function (title, author) {
 	    var dupe = false;
 	
+	    //iterative check for duplicates runs in 0(n) but its okay for now
+	    //because we only have a few books.
 	    _books.forEach(function (book) {
 	      if (book['title'] === title && book['author'] === author) {
 	        dupe = true;
@@ -19768,6 +19770,7 @@
 	    var book = {
 	      title: title,
 	      author: author,
+	      //assign default image if no image is provided
 	      imageUrl: 'http://jcfamilies.com/wp-content/themes/jcfamily/images/noPhotoProvided.gif'
 	    };
 	
@@ -20209,6 +20212,7 @@
 	
 	
 	  render: function () {
+	
 	    var bookList = this.props.current_books.map(function (book, idx) {
 	      return React.createElement(
 	        'li',

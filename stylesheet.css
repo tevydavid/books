@@ -15,6 +15,7 @@ body{
   font-family: 'Roboto', sans-serif;
 }
 
+/*override bootstrap margin so content aligns to the left*/
 .container{
   margin: 0;
 }
@@ -152,6 +153,7 @@ input{
   padding: 4px 28px 0 19px;
 }
 
+/*custom nav coloring and height*/
 .nav-lower{
   background: #FAFAFA;
   height: 58px;
@@ -164,6 +166,7 @@ li{
   font-size: 19px;
 }
 
+/*responsive css coresponding to bootstrap dimensions*/
 @media (max-width: 767px){
 
   .in, .collapsing{
