@@ -3,7 +3,7 @@
 }
 
 .button:hover{
-  text-shadow: .5px .5px lightgrey;
+  text-shadow: .5px .5px #E3E3E3;
 }
 
 .button:active{
