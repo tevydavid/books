@@ -9,12 +9,12 @@ var MainComponent = React.createClass({
     return(
       <div>
         <Navbar/>
-        <div className="container-fluid">
+        <div className="container">
           <div className="row">
-            <div className="col-sm-6">
+            <div className="col-sm-6 col-lg-5">
               <BooksIndex />
             </div>
-            <div className="col-sm-6">
+            <div className="col-sm-6 col-lg-5">
               <SponsoredContent />
             </div>
           </div>

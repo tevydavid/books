@@ -13,8 +13,8 @@ var Navbar = React.createClass({
          <li key={idx} className="button">{book.title}</li>
        );
     });
-    
-    bookList.push(<li className="button">Top 10 Australian Beaches</li>);
+
+    bookList.push(<li key='3' className="button">Top 10 Australian Beaches</li>);
 
     return (
       <div>

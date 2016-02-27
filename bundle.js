@@ -60,18 +60,18 @@
 	      React.createElement(Navbar, null),
 	      React.createElement(
 	        'div',
-	        { className: 'container-fluid' },
+	        { className: 'container' },
 	        React.createElement(
 	          'div',
 	          { className: 'row' },
 	          React.createElement(
 	            'div',
-	            { className: 'col-sm-6' },
+	            { className: 'col-sm-6 col-lg-5' },
 	            React.createElement(BooksIndex, null)
 	          ),
 	          React.createElement(
 	            'div',
-	            { className: 'col-sm-6' },
+	            { className: 'col-sm-6 col-lg-5' },
 	            React.createElement(SponsoredContent, null)
 	          )
 	        )
@@ -20179,7 +20179,7 @@
 	
 	    bookList.push(React.createElement(
 	      'li',
-	      { className: 'button' },
+	      { key: '3', className: 'button' },
 	      'Top 10 Australian Beaches'
 	    ));
 	
