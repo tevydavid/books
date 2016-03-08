@@ -3,7 +3,7 @@
 
 This repo is designed to showcase my front end technical skills in HTML, CSS, and Javascript in a holistic manner.
 
-**Please add new books and explore the [webpage](www.tevydavid.com/books)**
+**Please add new books and explore the [webpage](http://www.tevydavid.com/books)**
 
 ###Features:
 
