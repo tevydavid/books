@@ -20309,8 +20309,12 @@
 	        { className: "sponsor-content" },
 	        React.createElement(
 	          "div",
-	          { className: "sponsor-image", style: { 'backgroundImage': 'url(http://in1.ccio.co/fI/iJ/v6/163044448979129468ACmFofsBc.jpg)' } },
-	          "Top 10 Australian beaches"
+	          { className: "sponsor-image" },
+	          React.createElement(
+	            "h1",
+	            { className: "sponsor-title" },
+	            "Top 10 Australian beaches"
+	          )
 	        ),
 	        React.createElement(
 	          "p",

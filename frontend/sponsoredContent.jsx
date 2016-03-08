@@ -6,8 +6,9 @@ var SponsoredContent = React.createClass({
     return (
       <div className = "box">
         <div className = "sponsor-content" >
-          <div className="sponsor-image" style={{'backgroundImage': 'url(http://in1.ccio.co/fI/iJ/v6/163044448979129468ACmFofsBc.jpg)'}}>
-            Top 10 Australian beaches</div>
+          <div className="sponsor-image">
+            <h1 className="sponsor-title">Top 10 Australian beaches</h1>
+          </div>
           <p className= "sponsor-number">Number 10</p>
           <p className= "sponsor-description">Whitehaven Beach<br></br>Whitsunday Island, Whitsunday Islands</p>
           <div className= "questions">
