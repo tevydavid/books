@@ -10,8 +10,8 @@ var BooksIndexItem = React.createClass({
           <h1 className= "book-title">{this.props.book.title}</h1>
           <h2 className= "book-author">By {this.props.book.author}</h2>
           <div className= "questions">
-            <p className="question button">FREE SAMPLE</p>
-            <p className="question button" style={{color: '#FFAC31'}}>REVIEW</p>
+            <button className="question button"><a href="#">FREE SAMPLE</a></button>
+            <button className="question button q2">REVIEW</button>
           </div>
         </div>
       </div>

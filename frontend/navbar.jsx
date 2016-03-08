@@ -6,11 +6,11 @@ var Navbar = React.createClass({
 
     var bookList = this.props.current_books.map(function(book, idx){
       return (
-         <li key={idx} className="button">{book.title}</li>
+         <li key={idx} className="button"><a href="#">{book.title}</a></li>
        );
     });
 
-    bookList.push(<li key='sponsor' className="button">Top 10 Australian Beaches</li>);
+    bookList.push(<li key='sponsor' className="button"><a href="#">Top 10 Australian Beaches</a></li>);
 
     return (
       <nav>
@@ -21,7 +21,7 @@ var Navbar = React.createClass({
                 <path d="M3 18h18v-2h-18v2zm0-5h18v-2h-18v2zm0-7v2h18v-2h-18z"/>
             </svg>
           </button>
-          <p>My Books</p>
+          <p><a href="http://www.github.com/tevydavid/books">My Books</a></p>
         </div>
         <div className='container-fluid nav-lower' >
           <div className="collapse navbar-collapse" id="book-list">

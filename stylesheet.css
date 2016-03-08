@@ -1,3 +1,39 @@
+button {
+  margin: auto;
+  padding: 0;
+  border: none;
+  background: none;
+}
+
+button:focus{
+  outline: none;
+}
+
+input{
+  text-indent: 4px;
+}
+
+a{
+  color: inherit;
+}
+
+a:hover, a:focus{
+  text-decoration: none;
+  color: inherit;
+  background: none;
+}
+
+.nav>li>a{
+  padding: 0;
+  margin: 0;
+  height: 58px;
+  line-height: 58px;
+}
+
+.nav>li>a:hover, .nav>li>a:focus{
+  background: none;
+}
+
 h1 {
   margin: 0;
   padding: 0;
@@ -95,6 +131,10 @@ body{
   color: #EB1561;
 }
 
+.welcome-questions .question{
+  margin-left: 38px;
+}
+
 input{
   display: block;
   border: none;
@@ -118,6 +158,10 @@ input{
   font-size: 17px;
   font-weight: 500;
   color: #212121;
+}
+
+.q2 {
+  color: #FFAC31;
 }
 
 .sponsor-content{

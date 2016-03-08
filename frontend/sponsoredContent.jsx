@@ -11,8 +11,8 @@ var SponsoredContent = React.createClass({
           <p className= "sponsor-number">Number 10</p>
           <p className= "sponsor-description">Whitehaven Beach<br></br>Whitsunday Island, Whitsunday Islands</p>
           <div className= "questions">
-            <p className="question button">SHARE</p>
-            <p className="question button" style={{color: '#FFAC31'}}>EXPLORE</p>
+            <p className="question button"><a href="#">SHARE</a></p>
+            <p className="question button q2"><a href="#">EXPLORE</a></p>
           </div>
         </div>
       </div>

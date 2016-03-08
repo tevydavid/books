@@ -51,10 +51,10 @@ var Welcome = React.createClass({
               {validation}
             </div>
             <div className="questions" >
-              <p className="question button" style={{marginLeft: '38px'}}
-                  onClick={this.toggleForm}>CANCEL</p>
-              <p className="question button" style={{color: '#FFAC31', marginLeft: '38px'}}
-                  onClick={this.addBook}>SAVE</p>
+              <button className="question button"
+                  onClick={this.toggleForm}>CANCEL</button>
+              <button className="question button q2"
+                  onClick={this.addBook}>SAVE</button>
             </div>
           </div>
         )
@@ -66,11 +66,11 @@ var Welcome = React.createClass({
               <h2 className="welcome-description">It's been a while.</h2>
               <h2 className="welcome-description">Read any new books lately?</h2>
             </div>
-            <div className="questions" >
-              <p className="question button" style={{marginLeft: '38px'}}
-                  onClick={this.props.closeWelcome}>NO</p>
-              <p className="question button" style={{color: '#FFAC31', marginLeft: '38px'}}
-                  onClick={this.toggleForm}>YES</p>
+            <div className="questions welcome-questions" >
+              <button className="question button"
+                  onClick={this.props.closeWelcome}>NO</button>
+              <button className="question button q2"
+                  onClick={this.toggleForm}>YES</button>
             </div>
           </div>
         )

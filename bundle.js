@@ -19821,13 +19821,17 @@
 	          "div",
 	          { className: "questions" },
 	          React.createElement(
-	            "p",
+	            "button",
 	            { className: "question button" },
-	            "FREE SAMPLE"
+	            React.createElement(
+	              "a",
+	              { href: "#" },
+	              "FREE SAMPLE"
+	            )
 	          ),
 	          React.createElement(
-	            "p",
-	            { className: "question button", style: { color: '#FFAC31' } },
+	            "button",
+	            { className: "question button q2" },
 	            "REVIEW"
 	          )
 	        )
@@ -19914,14 +19918,14 @@
 	          'div',
 	          { className: 'questions' },
 	          React.createElement(
-	            'p',
-	            { className: 'question button', style: { marginLeft: '38px' },
+	            'button',
+	            { className: 'question button',
 	              onClick: this.toggleForm },
 	            'CANCEL'
 	          ),
 	          React.createElement(
-	            'p',
-	            { className: 'question button', style: { color: '#FFAC31', marginLeft: '38px' },
+	            'button',
+	            { className: 'question button q2',
 	              onClick: this.addBook },
 	            'SAVE'
 	          )
@@ -19952,16 +19956,16 @@
 	        ),
 	        React.createElement(
 	          'div',
-	          { className: 'questions' },
+	          { className: 'questions welcome-questions' },
 	          React.createElement(
-	            'p',
-	            { className: 'question button', style: { marginLeft: '38px' },
+	            'button',
+	            { className: 'question button',
 	              onClick: this.props.closeWelcome },
 	            'NO'
 	          ),
 	          React.createElement(
-	            'p',
-	            { className: 'question button', style: { color: '#FFAC31', marginLeft: '38px' },
+	            'button',
+	            { className: 'question button q2',
 	              onClick: this.toggleForm },
 	            'YES'
 	          )
@@ -20210,56 +20214,68 @@
 	var React = __webpack_require__(1);
 	
 	var Navbar = React.createClass({
-	  displayName: 'Navbar',
+	  displayName: "Navbar",
 	
 	
 	  render: function () {
 	
 	    var bookList = this.props.current_books.map(function (book, idx) {
 	      return React.createElement(
-	        'li',
-	        { key: idx, className: 'button' },
-	        book.title
+	        "li",
+	        { key: idx, className: "button" },
+	        React.createElement(
+	          "a",
+	          { href: "#" },
+	          book.title
+	        )
 	      );
 	    });
 	
 	    bookList.push(React.createElement(
-	      'li',
-	      { key: 'sponsor', className: 'button' },
-	      'Top 10 Australian Beaches'
+	      "li",
+	      { key: "sponsor", className: "button" },
+	      React.createElement(
+	        "a",
+	        { href: "#" },
+	        "Top 10 Australian Beaches"
+	      )
 	    ));
 	
 	    return React.createElement(
-	      'nav',
+	      "nav",
 	      null,
 	      React.createElement(
-	        'div',
-	        { className: 'navbar-title' },
+	        "div",
+	        { className: "navbar-title" },
 	        React.createElement(
-	          'button',
-	          { type: 'button', className: 'navbar-toggle collapsed', 'data-toggle': 'collapse', 'data-target': '#book-list', 'aria-expanded': 'false' },
+	          "button",
+	          { type: "button", className: "navbar-toggle collapsed", "data-toggle": "collapse", "data-target": "#book-list", "aria-expanded": "false" },
 	          React.createElement(
-	            'svg',
-	            { xmlns: 'http://www.w3.org/2000/svg', width: '24', height: '24', viewBox: '0 0 24 24' },
-	            React.createElement('path', { d: 'M0 0h24v24h-24z', fill: 'none' }),
-	            React.createElement('path', { d: 'M3 18h18v-2h-18v2zm0-5h18v-2h-18v2zm0-7v2h18v-2h-18z' })
+	            "svg",
+	            { xmlns: "http://www.w3.org/2000/svg", width: "24", height: "24", viewBox: "0 0 24 24" },
+	            React.createElement("path", { d: "M0 0h24v24h-24z", fill: "none" }),
+	            React.createElement("path", { d: "M3 18h18v-2h-18v2zm0-5h18v-2h-18v2zm0-7v2h18v-2h-18z" })
 	          )
 	        ),
 	        React.createElement(
-	          'p',
+	          "p",
 	          null,
-	          'My Books'
+	          React.createElement(
+	            "a",
+	            { href: "http://www.github.com/tevydavid/books" },
+	            "My Books"
+	          )
 	        )
 	      ),
 	      React.createElement(
-	        'div',
-	        { className: 'container-fluid nav-lower' },
+	        "div",
+	        { className: "container-fluid nav-lower" },
 	        React.createElement(
-	          'div',
-	          { className: 'collapse navbar-collapse', id: 'book-list' },
+	          "div",
+	          { className: "collapse navbar-collapse", id: "book-list" },
 	          React.createElement(
-	            'ul',
-	            { className: 'nav navbar-nav' },
+	            "ul",
+	            { className: "nav navbar-nav" },
 	            bookList
 	          )
 	        )
@@ -20310,12 +20326,20 @@
 	          React.createElement(
 	            "p",
 	            { className: "question button" },
-	            "SHARE"
+	            React.createElement(
+	              "a",
+	              { href: "#" },
+	              "SHARE"
+	            )
 	          ),
 	          React.createElement(
 	            "p",
-	            { className: "question button", style: { color: '#FFAC31' } },
-	            "EXPLORE"
+	            { className: "question button q2" },
+	            React.createElement(
+	              "a",
+	              { href: "#" },
+	              "EXPLORE"
+	            )
 	          )
 	        )
 	      )
