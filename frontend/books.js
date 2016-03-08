@@ -11,25 +11,27 @@ var books = {
   },
 
   checkForDuplicate: function(title, author){
-    var dupe = false;
-
     //iterative check for duplicates runs in 0(n) but its okay for now
     //because we only have a few books.
     _books.forEach(function(book){
       if ( book['title'] === title && book['author'] === author ) {
-        dupe = true;
+        throw "You've already added this book!"
       }
     });
 
-    return dupe;
   },
 
   addBook: function(title, author, imageUrl){
 
-    if (this.checkForDuplicate(title,author)) {
-      return false;
+    if (title === "") {
+      throw "Title cannot be blank!"
     }
 
+    if (author === "") {
+      throw "Author cannot be blank!"
+    }
+
+    this.checkForDuplicate(title,author);
 
     var book = {
       title: title,
@@ -42,10 +44,7 @@ var books = {
       book['imageUrl'] = imageUrl;
     }
 
-
     _books.push(book);
-
-    return true;
   }
 };
 

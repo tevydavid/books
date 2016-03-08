@@ -19750,24 +19750,26 @@
 	  },
 	
 	  checkForDuplicate: function (title, author) {
-	    var dupe = false;
-	
 	    //iterative check for duplicates runs in 0(n) but its okay for now
 	    //because we only have a few books.
 	    _books.forEach(function (book) {
 	      if (book['title'] === title && book['author'] === author) {
-	        dupe = true;
+	        throw "You've already added this book!";
 	      }
 	    });
-	
-	    return dupe;
 	  },
 	
 	  addBook: function (title, author, imageUrl) {
 	
-	    if (this.checkForDuplicate(title, author)) {
-	      return false;
+	    if (title === "") {
+	      throw "Title cannot be blank!";
 	    }
+	
+	    if (author === "") {
+	      throw "Author cannot be blank!";
+	    }
+	
+	    this.checkForDuplicate(title, author);
 	
 	    var book = {
 	      title: title,
@@ -19781,8 +19783,6 @@
 	    }
 	
 	    _books.push(book);
-	
-	    return true;
 	  }
 	};
 	
@@ -19862,17 +19862,19 @@
 	  },
 	
 	  toggleForm: function () {
-	    this.setState({ opened: !this.state.opened });
+	    this.setState({ opened: !this.state.opened, message: "" });
 	  },
 	
 	  addBook: function (e) {
 	    e.preventDefault();
-	    if (books.addBook(this.state.title, this.state.author, this.state.imageUrl)) {
+	    try {
+	      books.addBook(this.state.title.trim(), this.state.author.trim(), this.state.imageUrl);
 	      this.setState(this.getInitialState());
 	      this.props.updateBooks();
-	    } else {
-	      this.setState({ message: "You've already added this book." });
-	    };
+	      throw "Book Added!";
+	    } catch (error) {
+	      this.setState({ message: error });
+	    }
 	  },
 	
 	  render: function () {
@@ -19880,7 +19882,7 @@
 	      var validation = React.createElement(
 	        'div',
 	        { className: 'welcome-validation' },
-	        'You\'ve already added this book!'
+	        this.state.message
 	      );
 	    }
 	
@@ -19941,7 +19943,7 @@
 	          React.createElement(
 	            'h1',
 	            { className: 'welcome-title' },
-	            'Welcome back!'
+	            this.state.message ? this.state.message : 'Welcome back!'
 	          ),
 	          React.createElement(
 	            'h2',
@@ -19951,7 +19953,9 @@
 	          React.createElement(
 	            'h2',
 	            { className: 'welcome-description' },
-	            'Read any new books lately?'
+	            'Read any',
+	            this.state.message ? ' more ' : ' ',
+	            'new books lately?'
 	          )
 	        ),
 	        React.createElement(

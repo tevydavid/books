@@ -11,22 +11,25 @@ var Welcome = React.createClass({
     },
 
     toggleForm: function(){
-      this.setState({opened: !this.state.opened})
+      this.setState({opened: !this.state.opened, message: ""})
     },
 
     addBook: function(e){
       e.preventDefault();
-      if (books.addBook(this.state.title, this.state.author, this.state.imageUrl)) {
+      try {
+        books.addBook(this.state.title.trim(), this.state.author.trim(), this.state.imageUrl);
         this.setState(this.getInitialState());
         this.props.updateBooks();
-      } else {
-        this.setState({message: "You've already added this book."})
-      };
+        throw "Book Added!"
+      }
+      catch(error) {
+        this.setState({message: error})
+      }
     },
 
     render: function(){
       if ( this.state.message ) {
-        var validation = <div className='welcome-validation'>You've already added this book!</div>
+        var validation = <div className='welcome-validation'>{this.state.message}</div>
       }
 
       if (this.state.opened){
@@ -62,9 +65,9 @@ var Welcome = React.createClass({
         return(
           <div className="box">
             <div className="welcome-heading">
-              <h1 className="welcome-title">Welcome back!</h1>
+              <h1 className="welcome-title">{ this.state.message ? this.state.message : 'Welcome back!' }</h1>
               <h2 className="welcome-description">It's been a while.</h2>
-              <h2 className="welcome-description">Read any new books lately?</h2>
+              <h2 className="welcome-description">Read any{this.state.message ? ' more ' : ' '}new books lately?</h2>
             </div>
             <div className="questions welcome-questions" >
               <button className="question button"

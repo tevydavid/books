@@ -111,7 +111,7 @@ body{
 }
 
 .welcome-heading{
-  height: 244px;
+  height: 246px;
   padding-left: 22px;
 }
 
@@ -127,7 +127,7 @@ body{
 
 .welcome-validation{
   padding: 5px 0;
-  font-size: 16px;
+  font-size: 18px;
   color: #EB1561;
 }
 
