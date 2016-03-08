@@ -55,6 +55,8 @@
 	  displayName: 'MainComponent',
 	
 	
+	  // Store state in main component to update navbar and books components at the same time.
+	
 	  getInitialState: function () {
 	    return {
 	      current_books: books.all()
@@ -19805,12 +19807,12 @@
 	        "div",
 	        { className: "book-info" },
 	        React.createElement(
-	          "div",
+	          "h1",
 	          { className: "book-title" },
 	          this.props.book.title
 	        ),
 	        React.createElement(
-	          "div",
+	          "h2",
 	          { className: "book-author" },
 	          "By ",
 	          this.props.book.author
@@ -19886,7 +19888,7 @@
 	          'div',
 	          { className: 'welcome-heading' },
 	          React.createElement(
-	            'div',
+	            'h1',
 	            { className: 'welcome-title' },
 	            'Which Book Did You Read?'
 	          ),
@@ -19933,17 +19935,17 @@
 	          'div',
 	          { className: 'welcome-heading' },
 	          React.createElement(
-	            'div',
+	            'h1',
 	            { className: 'welcome-title' },
 	            'Welcome back!'
 	          ),
 	          React.createElement(
-	            'p',
+	            'h2',
 	            { className: 'welcome-description' },
 	            'It\'s been a while.'
 	          ),
 	          React.createElement(
-	            'p',
+	            'h2',
 	            { className: 'welcome-description' },
 	            'Read any new books lately?'
 	          )
@@ -20228,7 +20230,7 @@
 	    ));
 	
 	    return React.createElement(
-	      'div',
+	      'nav',
 	      null,
 	      React.createElement(
 	        'div',
@@ -20284,33 +20286,37 @@
 	      { className: "box" },
 	      React.createElement(
 	        "div",
-	        { className: "sponsor-image", style: { 'backgroundImage': 'url(http://in1.ccio.co/fI/iJ/v6/163044448979129468ACmFofsBc.jpg)' } },
-	        "Top 10 Australian beaches"
-	      ),
-	      React.createElement(
-	        "p",
-	        { className: "sponsor-number" },
-	        "Number 10"
-	      ),
-	      React.createElement(
-	        "p",
-	        { className: "sponsor-description" },
-	        "Whitehaven Beach",
-	        React.createElement("br", null),
-	        "Whitsunday Island, Whitsunday Islands"
-	      ),
-	      React.createElement(
-	        "div",
-	        { className: "questions" },
+	        { className: "sponsor-content" },
 	        React.createElement(
-	          "p",
-	          { className: "question button" },
-	          "SHARE"
+	          "div",
+	          { className: "sponsor-image", style: { 'backgroundImage': 'url(http://in1.ccio.co/fI/iJ/v6/163044448979129468ACmFofsBc.jpg)' } },
+	          "Top 10 Australian beaches"
 	        ),
 	        React.createElement(
 	          "p",
-	          { className: "question button", style: { color: '#FFAC31' } },
-	          "EXPLORE"
+	          { className: "sponsor-number" },
+	          "Number 10"
+	        ),
+	        React.createElement(
+	          "p",
+	          { className: "sponsor-description" },
+	          "Whitehaven Beach",
+	          React.createElement("br", null),
+	          "Whitsunday Island, Whitsunday Islands"
+	        ),
+	        React.createElement(
+	          "div",
+	          { className: "questions" },
+	          React.createElement(
+	            "p",
+	            { className: "question button" },
+	            "SHARE"
+	          ),
+	          React.createElement(
+	            "p",
+	            { className: "question button", style: { color: '#FFAC31' } },
+	            "EXPLORE"
+	          )
 	        )
 	      )
 	    );

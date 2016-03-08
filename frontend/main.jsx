@@ -7,6 +7,9 @@ var React = require('react'),
 
 var MainComponent = React.createClass({
 
+
+  // Store state in main component to update navbar and books components at the same time.
+
   getInitialState: function(){
     return({
       current_books: books.all()

@@ -1,3 +1,18 @@
+h1 {
+  margin: 0;
+  padding: 0;
+  font-size: 24px;
+  font-weight: 400;
+}
+
+h2 {
+  margin: 2px 0;
+  padding: 0;
+  font-size: 18px;
+  font-weight: 400;
+}
+
+
 .button {
   cursor: pointer;
 }
@@ -48,8 +63,6 @@ body{
 }
 
 .book-author{
-  font-size: 17px;
-  font-weight: 400;
   color: rgba(117,117,117,.8);
   padding: 2px 0 24px 18px;
 }
@@ -62,26 +75,23 @@ body{
 }
 
 .welcome-heading{
-  min-height: 174px;
+  height: 244px;
   padding-left: 22px;
 }
 
-.welcome-title{
+.welcome-title {
   color: #EB1561;
-  font-size: 24px;
-  font-weight: 400;
   padding: 22px 0 10px;
 }
 
 .welcome-description{
   font-size: 19px;
-  margin: 0;
   color: #212121;
 }
 
 .welcome-validation{
-  padding: 10px 0;
-  font-size: 19px;
+  padding: 5px 0;
+  font-size: 16px;
   color: #EB1561;
 }
 
@@ -98,6 +108,8 @@ input{
   height: 62px;
   line-height: 62px;
   bottom: 0;
+  width: 100%;
+  position: absolute;
 }
 
 .question{
@@ -106,6 +118,10 @@ input{
   font-size: 17px;
   font-weight: 500;
   color: #212121;
+}
+
+.sponsor-content{
+  height: 342px;
 }
 
 .sponsor-image{

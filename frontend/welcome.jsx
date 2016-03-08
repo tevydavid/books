@@ -33,7 +33,7 @@ var Welcome = React.createClass({
         return (
           <div className="box">
             <div className="welcome-heading" >
-              <div className="welcome-title">Which Book Did You Read?</div>
+              <h1 className="welcome-title">Which Book Did You Read?</h1>
               <form onSubmit={this.addBook}>
                 <input type='text'
                         className="welcome-description"
@@ -62,9 +62,9 @@ var Welcome = React.createClass({
         return(
           <div className="box">
             <div className="welcome-heading">
-              <div className="welcome-title">Welcome back!</div>
-              <p className="welcome-description">It's been a while.</p>
-              <p className="welcome-description">Read any new books lately?</p>
+              <h1 className="welcome-title">Welcome back!</h1>
+              <h2 className="welcome-description">It's been a while.</h2>
+              <h2 className="welcome-description">Read any new books lately?</h2>
             </div>
             <div className="questions" >
               <p className="question button" style={{marginLeft: '38px'}}
